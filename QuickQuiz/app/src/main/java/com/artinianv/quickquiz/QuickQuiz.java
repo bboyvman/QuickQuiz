@@ -4,32 +4,49 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class QuickQuiz extends Activity {
+
+    public TextView questionText;
+    public Button buttontrue;
+    public Button buttonfalse;
+
+    public ArrayList<Question> questions;
+
+    public int index = 0;
+    public int questionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick_quiz);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.quick_quiz, menu);
-        return true;
-    }
+        questions.add(new Questions("There are 24 hours in one day.","true"));
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        questionCount = questions.size()
+
+        questionText = (TextView)findViewById(R.id.questionText);
+        buttontrue = (Button)findViewById(R.id.buttontrue);
+        buttonfalse = (Button)findViewById(R.id.buttonfalse);
+
+        questionText.setText("This statement is false.");
+        @Override
+        public void onClick(View v) {
+         if (questions.get())
+            Toast toast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
+            toast.show();
+
+
+
+            Toast toast = Toast.makeText(getApplicationContext(), "Incorrect!", Toast.LENGTH_SHORT);
+            toast.show();
         }
-        return super.onOptionsItemSelected(item);
     }
+
 }

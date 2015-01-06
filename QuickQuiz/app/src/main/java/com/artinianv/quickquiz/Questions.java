@@ -7,13 +7,7 @@ import android.app.Activity;
  */
 public class Questions extends Activity {
 
-    public class stuff() {
-        q1 = "There is 24 hours in one day.";
-        q2 = "A 3D cube 8 sides.";
-        q3 = "I Failed this class";
-        a1 = "true";
-        a2 = "true";
-        a3 = "true";
-    }
+    public String question;
+    public String answer;
 
 }

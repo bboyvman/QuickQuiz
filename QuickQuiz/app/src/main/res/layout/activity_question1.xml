@@ -16,8 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="There are 24 hours in one da"
-        android:id="@+id/textView"
+        android:text="There are 24 hours in one day"
+        android:id="@+id/questionText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="169dp" />
